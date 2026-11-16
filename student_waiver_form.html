@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Southeast University - Need-Based Waiver Application Form</title>
+<style>
+  :root {
+    --primary: #1a365d;
+    --bg: #f1f5f9;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: "Times New Roman", Times, Georgia, serif;
+    background-color: var(--bg);
+    color: #000000;
+  }
+
+  /* Student Top Toolbar */
+  .student-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #0f172a;
+    color: #fff;
+    padding: 12px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  .brand-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    flex-wrap: wrap;
+  }
+
+  .brand-badge {
+    background: #2563eb;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11.5px;
+    letter-spacing: 0.3px;
+  }
+
+  .sem-badge {
+    background: #059669;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+  }
+
+  .toolbar-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .btn {
+    border: none;
+    padding: 9px 16px;
+    border-radius: 6px;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.15s, transform 0.1s;
+  }
+
+  .btn:hover { opacity: 0.92; }
+  .btn:active { transform: scale(0.98); }
+  .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  .btn-primary { background: #2563eb; color: #fff; }
+  .btn-success { background: #059669; color: #fff; }
+  .btn-outline { background: #334155; color: #f8fafc; }
+
+  .helper-banner {
+    max-width: 210mm;
+    margin: 14px auto 0;
+    padding: 12px 16px;
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    border-left: 5px solid #d97706;
+    border-radius: 6px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 13.5px;
+    color: #78350f;
+    line-height: 1.5;
+  }
+
+  .paper-page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 16px auto;
+    background: #ffffff;
+    padding: 14mm 17mm;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+    position: relative;
+  }
+
+  .uni-header {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .uni-header h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin: 0 0 4px 0;
+    text-transform: uppercase;
+  }
+
+  .uni-header .sub-school,
+  .uni-header .sub-dept {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 2px 0;
+  }
+
+  .uni-header .form-title {
+    font-size: 17px;
+    font-weight: 700;
+    margin: 6px 0 0 0;
+  }
+
+  .instructions-box {
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .instructions-box h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+  }
+
+  .instructions-box p {
+    margin: 2px 0;
+  }
+
+  .bangla-notice-inline {
+    margin-top: 6px;
+    padding: 6px 10px;
+    background: #f8fafc;
+    border: 1px solid #000;
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  .section-heading {
+    font-size: 14.5px;
+    font-weight: 700;
+    margin: 9px 0 4px 0;
+  }
+
+  table.official-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px double #000;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  table.official-table th,
+  table.official-table td {
+    border: 1px solid #000;
+    padding: 3.5px 6px;
+    vertical-align: middle;
+  }
+
+  table.official-table th {
+    font-weight: 700;
+    text-align: center;
+    background-color: #fafafa;
+  }
+
+  td.col-no {
+    width: 38px;
+    text-align: center;
+  }
+
+  td.col-item {
+    width: 44%;
+  }
+
+  .cell-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: "Times New Roman", Times, Georgia, serif;
+    font-size: 13px;
+    color: #000;
+    padding: 1px 3px;
+  }
+
+  .cell-input:focus {
+    background: #fef9c3;
+  }
+
+  .inline-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid #000;
+    padding: 2px 4px;
+  }
+
+  .inline-row:last-child {
+    border-bottom: none;
+  }
+
+  .inline-label {
+    white-space: nowrap;
+    min-width: 98px;
+    font-size: 12.5px;
+  }
+
+  .num-label {
+    white-space: nowrap;
+    min-width: 20px;
+    font-size: 12.5px;
+  }
+
+  .sub-grid-cell {
+    padding: 0 !important;
+  }
+
+  .reasons-list {
+    margin: 6px 0 12px 0;
+  }
+
+  .reason-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 13.5px;
+  }
+
+  .reason-item input {
+    flex: 1;
+    border: none;
+    border-bottom: 1px dotted #64748b;
+    font-family: "Times New Roman", Times, Georgia, serif;
+    font-size: 13.5px;
+    padding: 2px 4px;
+    outline: none;
+  }
+
+  .reason-item input:focus {
+    background: #fef9c3;
+    border-bottom: 1px solid #000;
+  }
+
+  .supporting-docs {
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .doc-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .doc-line input {
+    flex: 1;
+    border: none;
+    border-bottom: 1px dotted #94a3b8;
+    font-family: "Times New Roman", Times, Georgia, serif;
+    font-size: 13.5px;
+    outline: none;
+  }
+
+  .declaration-box {
+    margin-top: 14px;
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+
+  .declaration-box h3 {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+  }
+
+  .decl-name {
+    display: inline-block;
+    min-width: 170px;
+    border-bottom: 1px solid #000;
+    text-align: center;
+    font-weight: 700;
+    padding: 0 8px;
+  }
+
+  .print-submit-instruction {
+    margin-top: 14px;
+    padding: 8px 12px;
+    border: 1.5px solid #000;
+    background: #f8fafc;
+    font-size: 13.5px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .signature-area {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .bottom-submit-bar {
+    max-width: 210mm;
+    margin: 16px auto 36px;
+    padding: 16px 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  /* Confirmation Modal */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.7);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  .modal-card {
+    background: #fff;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    text-align: center;
+  }
+
+  .modal-card h2 {
+    margin: 0 0 10px;
+    color: #065f46;
+    font-size: 20px;
+  }
+
+  .modal-card p {
+    color: #334155;
+    font-size: 14px;
+    line-height: 1.55;
+    margin: 0 0 14px;
+  }
+
+  .modal-bangla-box {
+    background: #fef3c7;
+    border: 1px solid #f59e0b;
+    color: #92400e;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 18px;
+    line-height: 1.5;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+
+  @media print {
+    body { background: #fff !important; }
+    .student-toolbar,
+    .helper-banner,
+    .bottom-submit-bar,
+    .modal-overlay,
+    .no-print {
+      display: none !important;
+    }
+    .paper-page {
+      margin: 0 !important;
+      padding: 10mm 14mm !important;
+      box-shadow: none !important;
+      width: 100% !important;
+      min-height: auto !important;
+      page-break-after: always;
+    }
+    .paper-page:last-child {
+      page-break-after: auto;
+    }
+    input::placeholder {
+      color: transparent !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Student Top Navigation Bar -->
+  <div class="student-toolbar">
+    <div class="brand-title">
+      <span class="brand-badge">SOUTHEAST UNIVERSITY</span>
+      <span>Need-Based Waiver Application</span>
+      <span class="sem-badge" id="toolbar-sem-badge">Semester: Fall 2026</span>
+    </div>
+    <div class="toolbar-actions">
+      <button class="btn btn-primary" onclick="window.print()">
+        🖨️ Print / Save PDF
+      </button>
+      <button class="btn btn-success" id="top-submit-btn" onclick="submitApplication()">
+        📤 Submit Online
+      </button>
+      <button class="btn btn-outline" onclick="clearForm()">
+        🧹 Clear
+      </button>
+    </div>
+  </div>
+
+  <!-- Mandatory Instruction Banner -->
+  <div class="helper-banner">
+    <strong>📌 গুরুত্বপূর্ণ নির্দেশনা:</strong> আপনার আবেদন ফরমটি সঠিকভাবে পূরণ করে প্রথমে <strong>"Submit Online"</strong> বাটনে ক্লিক করুন এবং এরপর <strong>"Print / Save PDF"</strong> বাটনে ক্লিক করে পিডিএফ প্রিন্ট করুন।<br>
+    <strong>👉 আপনার আবেদন ফরম প্রিন্ট করে Signature করার পর প্রয়োজনীয় কাগজপত্র সহ ডিপাটমেন্ট অফিসে জমা দিন।</strong>
+  </div>
+
+  <!-- PAGE 1 -->
+  <div class="paper-page">
+    <div class="uni-header">
+      <h1>SOUTHEAST UNIVERSITY</h1>
+      <div class="sub-school">School: <span id="hdr-school">School of Law</span></div>
+      <div class="sub-dept">Department: <span id="hdr-dept">Law</span></div>
+      <div class="form-title">Need-Based Waiver Application Form (<span id="hdr-sem">Fall 2026</span>)</div>
+    </div>
+
+    <div class="instructions-box">
+      <h3>Important Instructions:</h3>
+      <p>01. Complete all sections of this form to ensure your application is processed.</p>
+      <p>02. All information provided will be kept confidential and used solely for the purpose of determining financial need.</p>
+      <p>03. Incomplete or incorrect forms may result in the rejection of the application.</p>
+      <div class="bangla-notice-inline">
+        নির্দেশনা: আপনার আবেদন ফরম প্রিন্ট করে Signature করার পর প্রয়োজনীয় কাগজপত্র সহ ডিপাটমেন্ট অফিসে জমা দিন।
+      </div>
+    </div>
+
+    <div class="section-heading">Section A: Personal &amp; Family Information</div>
+    <table class="official-table">
+      <thead>
+        <tr>
+          <th style="width: 38px;">No.</th>
+          <th style="width: 44%;">Items</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-no">01</td>
+          <td class="col-item">Name</td>
+          <td><input type="text" class="cell-input" id="f_name" placeholder="Enter your full name" oninput="syncDeclarationName()" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">02</td>
+          <td class="col-item">Student Code/ID</td>
+          <td><input type="text" class="cell-input" id="f_id" placeholder="e.g., 2023020300050" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">03</td>
+          <td class="col-item">Date of Admission with Batch/Semester</td>
+          <td><input type="text" class="cell-input" id="f_admission" placeholder="e.g., Spring 2023 (Batch 62)" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">04</td>
+          <td class="col-item">Department/Program</td>
+          <td><input type="text" class="cell-input" id="f_dept" value="Department of Law / LL.B. (Hons.)" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">05</td>
+          <td class="col-item">Running Semester</td>
+          <td><input type="text" class="cell-input" id="f_running_sem" value="Fall 2026" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">06</td>
+          <td class="col-item">Date of Birth</td>
+          <td><input type="text" class="cell-input" id="f_dob" placeholder="DD/MM/YYYY" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">07</td>
+          <td class="col-item">Father's Name</td>
+          <td><input type="text" class="cell-input" id="f_father" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">08</td>
+          <td class="col-item">Mother's Name</td>
+          <td><input type="text" class="cell-input" id="f_mother" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">09</td>
+          <td class="col-item">Name of Spouse (If any)</td>
+          <td><input type="text" class="cell-input" id="f_spouse" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">10</td>
+          <td class="col-item">Family Member</td>
+          <td><input type="text" class="cell-input" id="f_family_count" placeholder="Total number of family members" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">11</td>
+          <td class="col-item">Occupation of other Family Member/Sibling</td>
+          <td class="sub-grid-cell">
+            <div class="inline-row"><span class="num-label">1)</span><input type="text" class="cell-input" id="f_sib1" /></div>
+            <div class="inline-row"><span class="num-label">2)</span><input type="text" class="cell-input" id="f_sib2" /></div>
+            <div class="inline-row"><span class="num-label">3)</span><input type="text" class="cell-input" id="f_sib3" /></div>
+            <div class="inline-row"><span class="num-label">4)</span><input type="text" class="cell-input" id="f_sib4" /></div>
+            <div class="inline-row"><span class="num-label">5)</span><input type="text" class="cell-input" id="f_sib5" /></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="col-no">12</td>
+          <td class="col-item">Email</td>
+          <td class="sub-grid-cell">
+            <div class="inline-row"><span class="inline-label">Personal:</span><input type="email" class="cell-input" id="f_email_p" /></div>
+            <div class="inline-row"><span class="inline-label">Father:</span><input type="email" class="cell-input" id="f_email_f" /></div>
+            <div class="inline-row"><span class="inline-label">Mother:</span><input type="email" class="cell-input" id="f_email_m" /></div>
+            <div class="inline-row"><span class="inline-label">Legal Guardian:</span><input type="email" class="cell-input" id="f_email_g" /></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="col-no">13</td>
+          <td class="col-item">Contact</td>
+          <td class="sub-grid-cell">
+            <div class="inline-row"><span class="inline-label">Personal:</span><input type="text" class="cell-input" id="f_phone_p" /></div>
+            <div class="inline-row"><span class="inline-label">Father:</span><input type="text" class="cell-input" id="f_phone_f" /></div>
+            <div class="inline-row"><span class="inline-label">Mother:</span><input type="text" class="cell-input" id="f_phone_m" /></div>
+            <div class="inline-row"><span class="inline-label">Legal Guardian:</span><input type="text" class="cell-input" id="f_phone_g" /></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="section-heading">Section B: Academic &amp; Extra-Curricular Activities Information:</div>
+    <table class="official-table">
+      <thead>
+        <tr>
+          <th style="width: 38px;">No.</th>
+          <th style="width: 44%;">Items</th>
+          <th>Result/Credibility/Affiliation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-no">01</td>
+          <td class="col-item">SSC</td>
+          <td><input type="text" class="cell-input" id="f_ssc" placeholder="GPA / Year / Board" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">02</td>
+          <td class="col-item">HSC</td>
+          <td><input type="text" class="cell-input" id="f_hsc" placeholder="GPA / Year / Board" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">03</td>
+          <td class="col-item">Total Credits (Undergraduate/Master's Programs)</td>
+          <td><input type="text" class="cell-input" id="f_total_credits" placeholder="e.g., 136" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">04</td>
+          <td class="col-item">Completed Credits &amp; Completed Semester</td>
+          <td>
+            <div style="display:flex; gap:8px;">
+              <input type="text" class="cell-input" id="f_completed_credits" placeholder="Credits (e.g., 90)" style="border-right:1px solid #ccc;" />
+              <input type="text" class="cell-input" id="f_comp_sem" placeholder="Completed Sem (e.g., 7)" />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="col-no">05</td>
+          <td class="col-item">Credits taken at Running Semester</td>
+          <td><input type="text" class="cell-input" id="f_running_credits" placeholder="e.g., 18" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">06</td>
+          <td class="col-item">Remaining Credits &amp; Remaining Semester</td>
+          <td>
+            <div style="display:flex; gap:8px;">
+              <input type="text" class="cell-input" id="f_remaining_credits" placeholder="Credits (e.g., 28)" style="border-right:1px solid #ccc;" />
+              <input type="text" class="cell-input" id="f_rem_sem" placeholder="Remaining Sem (e.g., 1)" />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="col-no">07</td>
+          <td class="col-item">Current CGPA &amp; GPA at Last Semesters</td>
+          <td class="sub-grid-cell">
+            <div class="inline-row" style="background:#f8fafc;"><span class="inline-label" style="font-weight:700;">Current CGPA:</span><input type="text" class="cell-input" id="f_cgpa" placeholder="e.g., 3.29" /></div>
+            <div class="inline-row"><span class="num-label">1)</span><input type="text" class="cell-input" id="f_gpa1" /></div>
+            <div class="inline-row"><span class="num-label">2)</span><input type="text" class="cell-input" id="f_gpa2" /></div>
+            <div class="inline-row"><span class="num-label">3)</span><input type="text" class="cell-input" id="f_gpa3" /></div>
+            <div class="inline-row"><span class="num-label">4)</span><input type="text" class="cell-input" id="f_gpa4" /></div>
+            <div class="inline-row"><span class="num-label">5)</span><input type="text" class="cell-input" id="f_gpa5" /></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="col-no">08</td>
+          <td class="col-item">Extra-Curricular Activities</td>
+          <td><input type="text" class="cell-input" id="f_eca" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">09</td>
+          <td class="col-item">Club Affiliation</td>
+          <td><input type="text" class="cell-input" id="f_club" /></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="paper-page">
+    <div class="section-heading">Section C: Family Income Related Information:</div>
+    <table class="official-table">
+      <thead>
+        <tr>
+          <th style="width: 38px;">No.</th>
+          <th style="width: 44%;">Income (Yearly)</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-no">01</td>
+          <td class="col-item">Father's Occupation &amp; Income</td>
+          <td><input type="text" class="cell-input" id="f_inc_father" placeholder="Occupation & Yearly Amount (e.g., Service - 4,50,000)" oninput="calculateTotalIncome()" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">02</td>
+          <td class="col-item">Mother's Occupation &amp; Income (If any)</td>
+          <td><input type="text" class="cell-input" id="f_inc_mother" placeholder="Occupation & Yearly Amount" oninput="calculateTotalIncome()" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">03</td>
+          <td class="col-item">Personal Income (If any)</td>
+          <td><input type="text" class="cell-input" id="f_inc_personal" oninput="calculateTotalIncome()" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">04</td>
+          <td class="col-item">Occupation &amp; Income of Spouse (If any)</td>
+          <td><input type="text" class="cell-input" id="f_inc_spouse" oninput="calculateTotalIncome()" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">05</td>
+          <td class="col-item">Income from Business (If any)</td>
+          <td><input type="text" class="cell-input" id="f_inc_business" oninput="calculateTotalIncome()" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">06</td>
+          <td class="col-item">Others Income (If any)</td>
+          <td><input type="text" class="cell-input" id="f_inc_others" oninput="calculateTotalIncome()" /></td>
+        </tr>
+        <tr style="background:#f8fafc; font-weight:700;">
+          <td class="col-no">—</td>
+          <td class="col-item">Total Yearly Guardian/Family Income</td>
+          <td><input type="text" class="cell-input" id="f_total_income" style="font-weight:700;" placeholder="Auto-calculated or enter total (e.g., 4,50,000.00)" /></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="section-heading">Section D: Availing Waiver (Running/Previous):</div>
+    <table class="official-table">
+      <thead>
+        <tr>
+          <th style="width: 38px;">No.</th>
+          <th style="width: 38%;">Category</th>
+          <th style="width: 16%;">Percentages</th>
+          <th style="width: 18%;">Amount</th>
+          <th>Present Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-no">01</td>
+          <td>SSC &amp; HSC Waiver</td>
+          <td><input type="text" class="cell-input" id="f_w1_pct" /></td>
+          <td><input type="text" class="cell-input" id="f_w1_amt" /></td>
+          <td><input type="text" class="cell-input" id="f_w1_st" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">02</td>
+          <td>Merit Waiver</td>
+          <td><input type="text" class="cell-input" id="f_w2_pct" /></td>
+          <td><input type="text" class="cell-input" id="f_w2_amt" /></td>
+          <td><input type="text" class="cell-input" id="f_w2_st" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">03</td>
+          <td>Female Waiver</td>
+          <td><input type="text" class="cell-input" id="f_w3_pct" /></td>
+          <td><input type="text" class="cell-input" id="f_w3_amt" /></td>
+          <td><input type="text" class="cell-input" id="f_w3_st" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">04</td>
+          <td>Sibling Waiver</td>
+          <td><input type="text" class="cell-input" id="f_w4_pct" /></td>
+          <td><input type="text" class="cell-input" id="f_w4_amt" /></td>
+          <td><input type="text" class="cell-input" id="f_w4_st" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">05</td>
+          <td>Freedom Fighter 1971 &amp; July Joddha 2024</td>
+          <td><input type="text" class="cell-input" id="f_w5_pct" /></td>
+          <td><input type="text" class="cell-input" id="f_w5_amt" /></td>
+          <td><input type="text" class="cell-input" id="f_w5_st" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">06</td>
+          <td>Any other Special Waiver</td>
+          <td><input type="text" class="cell-input" id="f_w6_pct" /></td>
+          <td><input type="text" class="cell-input" id="f_w6_amt" /></td>
+          <td><input type="text" class="cell-input" id="f_w6_st" /></td>
+        </tr>
+        <tr>
+          <td class="col-no">07</td>
+          <td colspan="2">Did you receive Need-Based Waiver (NBW) before? (If Yes, mention Semester)</td>
+          <td colspan="2"><input type="text" class="cell-input" id="f_prev_nbw" placeholder="No / Yes (e.g., Spring 2026)" /></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="section-heading">Why you might be eligible for a Need Based Waiver, point out at least five reasons:</div>
+    <div class="reasons-list">
+      <div class="reason-item"><span>1)</span><input type="text" id="f_reason1" /></div>
+      <div class="reason-item"><span>2)</span><input type="text" id="f_reason2" /></div>
+      <div class="reason-item"><span>3)</span><input type="text" id="f_reason3" /></div>
+      <div class="reason-item"><span>4)</span><input type="text" id="f_reason4" /></div>
+      <div class="reason-item"><span>5)</span><input type="text" id="f_reason5" /></div>
+    </div>
+
+    <div class="section-heading">Section E: Supporting Documents:</div>
+    <div class="supporting-docs">
+      <div>a) Salary Certificate of Guardian.</div>
+      <div class="doc-line"><span>b) Any other documents:</span><input type="text" id="f_doc_b" /></div>
+      <div class="doc-line"><span>c)</span><input type="text" id="f_doc_c" /></div>
+    </div>
+
+    <div class="declaration-box">
+      <h3>Declaration</h3>
+      <p>
+        I, <span class="decl-name" id="decl_student_name">&nbsp;</span> hereby declare that the information provided in this application is true and accurate. I understand that any false information may result in the disqualification of my application. I also agree to comply with any further requirements as instructed by the screening committee.
+      </p>
+    </div>
+
+    <div class="print-submit-instruction">
+      নির্দেশনা: আপনার আবেদন ফরম প্রিন্ট করে Signature করার পর প্রয়োজনীয় কাগজপত্র সহ ডিপাটমেন্ট অফিসে জমা দিন।
+    </div>
+
+    <div class="signature-area">
+      <div style="font-weight: normal; font-size: 13px;">
+        Date: <input type="text" id="f_sign_date" style="border:none; border-bottom:1px solid #000; width:120px; font-family:inherit; font-size:13px;" />
+      </div>
+      <div>Signature &amp; Date</div>
+    </div>
+  </div>
+
+  <!-- Bottom Submit & Print Bar -->
+  <div class="bottom-submit-bar">
+    <div style="font-size:13.5px; color:#334155;">
+      <strong>ধাপ ১:</strong> অনলাইনে সাবমিট করুন &nbsp;|&nbsp; <strong>ধাপ ২:</strong> PDF প্রিন্ট করে স্বাক্ষরসহ অফিসে জমা দিন।
+    </div>
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <button class="btn btn-success" id="bottom-submit-btn" onclick="submitApplication()">
+        📤 1. Submit Application Online
+      </button>
+      <button class="btn btn-primary" onclick="window.print()">
+        🖨️ 2. Print / Save as PDF
+      </button>
+    </div>
+  </div>
+
+  <!-- Confirmation Modal -->
+  <div class="modal-overlay" id="success-modal">
+    <div class="modal-card">
+      <h2 id="modal-title">✅ আবেদন সফলভাবে জমা হয়েছে!</h2>
+      <p id="modal-message"></p>
+      <div class="modal-bangla-box">
+        নির্দেশনা: আপনার আবেদন ফরম প্রিন্ট করে Signature করার পর প্রয়োজনীয় কাগজপত্র সহ ডিপাটমেন্ট অফিসে জমা দিন।
+      </div>
+      <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+        <button class="btn btn-primary" onclick="window.print()">🖨️ Print / Save as PDF</button>
+        <button class="btn btn-outline" onclick="closeModal()">বন্ধ করুন (Close)</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // =========================================================================
+  // GOOGLE APPS SCRIPT WEB APP URL (এখানে আপনার Google Apps Script URL বসান)
+  // অথবা Admin Panel থেকে 'Download Configured Student Form' ব্যবহার করলে এটি অটো বসে যাবে
+  // =========================================================================
+  const DEFAULT_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyx21cK_7ZKtSb7sTng5MlfyD6LFTo-MdYHAAGneaZGP4W0GRnmDFlCwaKKQqiTLSQfXQ/exec";
+  let ACTIVE_CONFIG = {
+    semester: "Fall 2026",
+    school: "School of Law",
+    department: "Law",
+    tuitionFees: "76,176.00"
+  };
+
+  function getScriptUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const urlParam = params.get('api');
+    if (urlParam && urlParam.startsWith('http')) {
+      localStorage.setItem('seu_student_api_url', urlParam);
+      return urlParam;
+    }
+    if (DEFAULT_SCRIPT_URL && DEFAULT_SCRIPT_URL.startsWith('http')) {
+      return DEFAULT_SCRIPT_URL;
+    }
+    return localStorage.getItem('seu_student_api_url') || "";
+  }
+
+  function applyConfigToForm(cfg) {
+    ACTIVE_CONFIG = { ...ACTIVE_CONFIG, ...cfg };
+    document.getElementById('toolbar-sem-badge').textContent = `Semester: ${ACTIVE_CONFIG.semester}`;
+    document.getElementById('hdr-sem').textContent = ACTIVE_CONFIG.semester;
+    document.getElementById('hdr-school').textContent = ACTIVE_CONFIG.school;
+    document.getElementById('hdr-dept').textContent = ACTIVE_CONFIG.department;
+    document.getElementById('f_running_sem').value = ACTIVE_CONFIG.semester;
+  }
+
+  async function initStudentForm() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('sem')) {
+      applyConfigToForm({ semester: params.get('sem') });
+    }
+    if (params.get('school')) {
+      applyConfigToForm({ school: params.get('school') });
+    }
+    if (params.get('dept')) {
+      applyConfigToForm({ department: params.get('dept') });
+    }
+
+    const scriptUrl = getScriptUrl();
+    if (scriptUrl) {
+      try {
+        const res = await fetch(`${scriptUrl}?action=config`);
+        const data = await res.json();
+        if (data && data.status === "success" && data.config) {
+          // URL parameter overrides if explicitly provided, otherwise use server config
+          const merged = { ...data.config };
+          if (params.get('sem')) merged.semester = params.get('sem');
+          applyConfigToForm(merged);
+        }
+      } catch (e) {
+        console.warn("Could not fetch live semester config, using default.", e);
+      }
+    }
+  }
+
+  function escapeHtml(str) {
+    return String(str || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function syncDeclarationName() {
+    const val = document.getElementById('f_name').value.trim();
+    document.getElementById('decl_student_name').innerHTML = val ? escapeHtml(val) : '&nbsp;';
+  }
+
+  function calculateTotalIncome() {
+    const fields = ['f_inc_father', 'f_inc_mother', 'f_inc_personal', 'f_inc_spouse', 'f_inc_business', 'f_inc_others'];
+    let sum = 0;
+    let foundNumber = false;
+
+    fields.forEach(id => {
+      const raw = document.getElementById(id).value;
+      const matches = raw.replace(/,/g, '').match(/(\d+(\.\d+)?)/g);
+      if (matches && matches.length > 0) {
+        const num = parseFloat(matches[matches.length - 1]);
+        if (!isNaN(num)) {
+          sum += num;
+          foundNumber = true;
+        }
+      }
+    });
+
+    if (foundNumber) {
+      document.getElementById('f_total_income').value = formatBDT(sum);
+    }
+  }
+
+  function formatBDT(num) {
+    const parts = num.toFixed(2).split('.');
+    let intPart = parts[0];
+    if (intPart.length > 3) {
+      const lastThree = intPart.slice(-3);
+      const rest = intPart.slice(0, -3).replace(/\B(?=(\d{2})+(?!\d))/g, ',');
+      intPart = rest + ',' + lastThree;
+    }
+    return intPart + '.' + parts[1];
+  }
+
+  function collectApplicationPayload() {
+    const waiverCategories = [
+      { label: 'SSC/HSC', pct: 'f_w1_pct', st: 'f_w1_st' },
+      { label: 'Merit', pct: 'f_w2_pct', st: 'f_w2_st' },
+      { label: 'Female', pct: 'f_w3_pct', st: 'f_w3_st' },
+      { label: 'Sibling', pct: 'f_w4_pct', st: 'f_w4_st' },
+      { label: 'FF/July24', pct: 'f_w5_pct', st: 'f_w5_st' },
+      { label: 'Special', pct: 'f_w6_pct', st: 'f_w6_st' }
+    ];
+
+    let availableList = [];
+    let implementedList = [];
+    waiverCategories.forEach(w => {
+      const p = document.getElementById(w.pct).value.trim();
+      const s = document.getElementById(w.st).value.trim();
+      if (p) {
+        const entry = `${w.label} (${p})`;
+        availableList.push(entry);
+        if (s.toLowerCase().includes('run') || s.toLowerCase().includes('imp') || s.toLowerCase().includes('yes') || s.toLowerCase().includes('active')) {
+          implementedList.push(entry);
+        }
+      }
+    });
+
+    const reasonsArr = [1, 2, 3, 4, 5]
+      .map(i => document.getElementById('f_reason' + i).value.trim())
+      .filter(Boolean);
+
+    const guardianPhone = document.getElementById('f_phone_g').value.trim() || document.getElementById('f_phone_f').value.trim();
+    const docs = [
+      "Salary Certificate of Guardian",
+      document.getElementById('f_doc_b').value.trim(),
+      document.getElementById('f_doc_c').value.trim()
+    ].filter(Boolean).join('; ');
+
+    return {
+      action: "submit",
+      submittedAt: new Date().toISOString(),
+      name: document.getElementById('f_name').value.trim(),
+      code: document.getElementById('f_id').value.trim(),
+      admission: document.getElementById('f_admission').value.trim(),
+      department: document.getElementById('f_dept').value.trim(),
+      runningSemester: document.getElementById('f_running_sem').value.trim() || ACTIVE_CONFIG.semester,
+      dob: document.getElementById('f_dob').value.trim(),
+      fatherName: document.getElementById('f_father').value.trim(),
+      motherName: document.getElementById('f_mother').value.trim(),
+      spouseName: document.getElementById('f_spouse').value.trim(),
+      familyMembers: document.getElementById('f_family_count').value.trim(),
+      phonePersonal: document.getElementById('f_phone_p').value.trim(),
+      phoneGuardian: guardianPhone,
+      emailPersonal: document.getElementById('f_email_p').value.trim(),
+      ssc: document.getElementById('f_ssc').value.trim(),
+      hsc: document.getElementById('f_hsc').value.trim(),
+      totalCredits: document.getElementById('f_total_credits').value.trim(),
+      completedCredits: document.getElementById('f_completed_credits').value.trim(),
+      remainingCredits: document.getElementById('f_remaining_credits').value.trim(),
+      credits: document.getElementById('f_running_credits').value.trim(),
+      cgpa: document.getElementById('f_cgpa').value.trim(),
+      completedSem: document.getElementById('f_comp_sem').value.trim(),
+      remainingSem: document.getElementById('f_rem_sem').value.trim(),
+      income: document.getElementById('f_total_income').value.trim() || document.getElementById('f_inc_father').value.trim(),
+      waiverAvailable: availableList.join(', '),
+      waiverImplemented: implementedList.join(', '),
+      tuitionFees: ACTIVE_CONFIG.tuitionFees || "76,176.00",
+      reasons: reasonsArr.map((r, idx) => `${idx + 1}. ${r}`).join('; '),
+      nbwBefore: document.getElementById('f_prev_nbw').value.trim(),
+      eca: document.getElementById('f_eca').value.trim(),
+      club: document.getElementById('f_club').value.trim(),
+      supportingDocs: docs,
+      remarks: ""
+    };
+  }
+
+  async function submitApplication() {
+    const name = document.getElementById('f_name').value.trim();
+    const code = document.getElementById('f_id').value.trim();
+
+    if (!name || !code) {
+      alert("দয়া করে আপনার নাম (01) এবং স্টুডেন্ট কোড/আইডি (02) পূরণ করুন।");
+      if (!name) document.getElementById('f_name').focus();
+      else document.getElementById('f_id').focus();
+      return;
+    }
+
+    const payload = collectApplicationPayload();
+    const scriptUrl = getScriptUrl();
+    const topBtn = document.getElementById('top-submit-btn');
+    const botBtn = document.getElementById('bottom-submit-btn');
+
+    if (scriptUrl && scriptUrl.startsWith('http')) {
+      try {
+        topBtn.disabled = true;
+        botBtn.disabled = true;
+        topBtn.textContent = "⏳ সাবমিট হচ্ছে...";
+        botBtn.textContent = "⏳ সাবমিট হচ্ছে...";
+
+        // Using text/plain avoids CORS preflight issues with Google Apps Script
+        const response = await fetch(scriptUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+        if (result && result.status === "success") {
+          document.getElementById('modal-title').textContent = "✅ আবেদন অনলাইনে জমা হয়েছে!";
+          document.getElementById('modal-message').innerHTML =
+            `ধন্যবাদ, <strong>${escapeHtml(name)}</strong> (ID: <strong>${escapeHtml(code)}</strong>)।<br>আপনার <strong>${escapeHtml(payload.runningSemester)}</strong> সেমিস্টারের আবেদনটি সফলভাবে রেকর্ড করা হয়েছে।`;
+          document.getElementById('success-modal').style.display = 'flex';
+        } else {
+          throw new Error((result && result.message) || "Server returned an error");
+        }
+      } catch (err) {
+        alert("অনলাইন সার্ভারে সংযোগ পেতে সমস্যা হয়েছে (" + err.message + ")। ব্যাকআপ ফাইল ডাউনলোড হচ্ছে।");
+        downloadOfflinePackage(payload);
+      } finally {
+        topBtn.disabled = false;
+        botBtn.disabled = false;
+        topBtn.textContent = "📤 Submit Online";
+        botBtn.textContent = "📤 1. Submit Application Online";
+      }
+    } else {
+      downloadOfflinePackage(payload);
+    }
+  }
+
+  function downloadOfflinePackage(payload) {
+    const safeId = (payload.code || payload.name || 'student').replace(/[^a-zA-Z0-9_-]/g, '_');
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `SEU_NBW_${safeId}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    document.getElementById('modal-title').textContent = "✅ আবেদন ফাইল তৈরি হয়েছে!";
+    document.getElementById('modal-message').innerHTML =
+      `আপনার ডাটা ফাইল (<strong>SEU_NBW_${escapeHtml(safeId)}.json</strong>) ডাউনলোড হয়েছে। নিচের বাটনে ক্লিক করে ফর্মটি PDF প্রিন্ট করুন।`;
+    document.getElementById('success-modal').style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('success-modal').style.display = 'none';
+  }
+
+  function clearForm() {
+    if (!confirm("আপনি কি ফর্মের সব তথ্য মুছে ফেলতে চান?")) return;
+    document.querySelectorAll('input').forEach(inp => {
+      if (inp.id === 'f_dept') inp.value = "Department of Law / LL.B. (Hons.)";
+      else if (inp.id === 'f_running_sem') inp.value = ACTIVE_CONFIG.semester;
+      else inp.value = "";
+    });
+    syncDeclarationName();
+  }
+
+  initStudentForm();
+</script>
+</body>
+</html>
